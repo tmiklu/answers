@@ -14,12 +14,12 @@
    
    ssh interview
 
-3. scp /mnt/c/Users/tomas/Downloads/CV.docx interview:/data/resumes
+3. $ scp /mnt/c/Users/tomas/Downloads/CV.docx interview:/data/resumes
 
-4. sudo vim /etc/ssh/sshd_config
+4. $ sudo vim /etc/ssh/sshd_config
    PasswordAuthentication yes
    
-   sudo systemctl reload sshd
+   $ sudo systemctl reload sshd
    
    $ sudo systemctl status sshd
    [sudo] password for applicant:
@@ -33,4 +33,5 @@
    CGroup: /system.slice/ssh.service
            └─893 /usr/sbin/sshd -D
    
-   from local machine: $ mv ~./ssh/id_rsa ~./ssh/id_rsa.bak
+   #from local machine:
+   $ mv ~./ssh/id_rsa ~./ssh/id_rsa.bak
