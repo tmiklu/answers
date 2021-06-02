@@ -1,1 +1,36 @@
+1. $ ssh -l applicant 167.71.61.60 -i temp
+   $ passwd
 
+2. $ cat temp > ~/.ssh/id_rsa
+
+   $ cat << EOF > ~/.ssh/config
+   Host interview
+	 Hostname        167.71.61.60
+	 User            applicant
+	 IdentityFIle    ~/.ssh/id_rsa
+   EOF
+   $ eval `ssh-agent`
+   $ ssh-add (prompted for private key password)
+   
+   ssh interview
+
+3. scp /mnt/c/Users/tomas/Downloads/CV.docx interview:/data/resumes
+
+4. sudo vim /etc/ssh/sshd_config
+   PasswordAuthentication yes
+   
+   sudo systemctl reload sshd
+   
+   $ sudo systemctl status sshd
+   [sudo] password for applicant:
+   ● ssh.service - OpenBSD Secure Shell server
+   Loaded: loaded (/lib/systemd/system/ssh.service; enabled; vendor preset: enabled)
+   Active: active (running) since Wed 2021-06-02 08:33:48 UTC; 1h 13min ago
+   Process: 2298 ExecReload=/bin/kill -HUP $MAINPID (code=exited, status=0/SUCCESS)  #####<<< reload
+   Process: 2297 ExecReload=/usr/sbin/sshd -t (code=exited, status=0/SUCCESS)
+   Main PID: 893 (sshd)
+   Tasks: 1 (limit: 1151)
+   CGroup: /system.slice/ssh.service
+           └─893 /usr/sbin/sshd -D
+   
+   from local machine: $ mv ~./ssh/id_rsa ~./ssh/id_rsa.bak
