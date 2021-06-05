@@ -1,4 +1,15 @@
 5. /home is not mounted, it's under root. Left 22G
-   $ applicant@tomas-miklusicak-interview:/home$ df -h /home
+   $ df -h /home
      Filesystem      Size  Used Avail Use% Mounted on
      /dev/vda1        25G  2.9G   22G  13% /
+ 
+6. $ ls -lha /data
+   $ sudo chmod -R o-rwx /data
+   $ sudo setfacl -m g:ai:r-x /data
+   $ sudo setfacl -m g:ai:rwx /data/samples
+   $ sudo setfacl -m g:hr:--x /data
+   $ sudo setfacl -m g:hr:rwx /data/resumes
+   
+   $ chown .ai /data/samples && chown .hr /data/resumes
+   $ chmod g+s /data/samples && chmod g+s /data/resumes
+   
