@@ -1,0 +1,4 @@
+5. /home is not mounted, it's under root. Left 22G
+   $ applicant@tomas-miklusicak-interview:/home$ df -h /home
+     Filesystem      Size  Used Avail Use% Mounted on
+     /dev/vda1        25G  2.9G   22G  13% /
