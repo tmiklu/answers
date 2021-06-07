@@ -1,5 +1,6 @@
 $ sudo -i
-$ crontab -e 
+$ crontab -e
+# delete /temporary
 0 0 * * 1-5 /bin/rm -rf /temporary/* > /dev/null 2>&1
 :wq
 
