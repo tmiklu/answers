@@ -9,3 +9,4 @@ $ systemctl restart sshd
 $ sudo ufw enable
 
 $ sudo ufw deny 7676/tcp
+$ sudo ufw reload
