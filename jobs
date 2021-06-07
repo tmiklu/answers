@@ -1,1 +1,9 @@
+$ sudo -i
+$ crontab -e 
+0 0 * * 1-5 /bin/rm -rf /temporary/*
+:wq
+
+$ crontab -l | grep -i temp
+# delete /temporary
+0 0 * * 1-5 /bin/rm -rf /temporary/*
 
