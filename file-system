@@ -7,8 +7,10 @@
    $ sudo chmod -R o-rwx /data
    $ sudo setfacl -m g:ai:r-x /data
    $ sudo setfacl -m g:ai:rwx /data/samples
+   $ sudo umask 0002 /data/samples
    $ sudo setfacl -m g:hr:--x /data
    $ sudo setfacl -m g:hr:rwx /data/resumes
+   $ sudo umask 0002 /data/resumes
    
    $ chown .ai /data/samples && chown .hr /data/resumes
    $ chmod g+s /data/samples && chmod g+s /data/resumes
@@ -16,4 +18,5 @@
 7. $ sudo usermod -G ai -a applicant
    $ id applicant
      uid=1000(applicant) gid=1000(applicant) groups=1000(applicant),27(sudo),1005(ai)
+   $
    
