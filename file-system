@@ -18,5 +18,6 @@
 7. $ sudo usermod -G ai -a applicant
    $ id applicant
      uid=1000(applicant) gid=1000(applicant) groups=1000(applicant),27(sudo),1005(ai)
-   $
+   $ exit
+   $ ssh interview
    
