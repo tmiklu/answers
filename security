@@ -1,6 +1,9 @@
 $ sudo systemctl status ufw
+$ sudo ufw status
 $ sudo ufw allow 9523/tcp
 $ sudo vim /etc/ssh/sshd_config
 Port 9523
 # check syntax
-sshd -t
+$ sshd -t
+$ systemctl restart sshd
+$ sudo ufw enable
