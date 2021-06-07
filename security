@@ -7,3 +7,5 @@ Port 9523
 $ sshd -t
 $ systemctl restart sshd
 $ sudo ufw enable
+
+$ sudo ufw deny 7676/tcp
