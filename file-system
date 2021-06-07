@@ -21,3 +21,5 @@
    $ exit
    $ ssh interview
    
+   I set ACL to group AI and other has no access to samples that's why random user in group applicant can't access it via symlink "samples"
+   
